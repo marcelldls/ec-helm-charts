@@ -2,69 +2,7 @@
   "type": "object",
   "properties": {
     "ioc-instance": {
-      "$ref": "#/$defs/ioc-instance"
-    }
-  },
-  "$defs": {
-    "ioc-instance": {
-      "title": "ioc-instance",
-      "type": "object",
-      "properties": {
-        "beamline": {
-          "type": "string"
-        },
-        "ioc_group": {
-          "type": "string"
-        },
-        "location": {
-          "type": "string"
-        },
-        "hostNetwork": {
-          "type": "boolean"
-        },
-        "useAffinity": {
-          "type": "boolean"
-        },
-        "iocFolder": {
-          "type": "string"
-        },
-        "iocConfig": {
-          "type": "string"
-        },
-        "stop": {
-          "type": "string"
-        },
-        "liveness": {
-          "type": "string"
-        },
-        "globalEnv": {
-          "type": "string"
-        },
-        "securityContext": {
-          "type": "string"
-        },
-        "image": {
-          "type": "string"
-        },
-        "dataVolume": {
-          "type": "string"
-        },
-        "opisClaim": {
-          "type": "string"
-        },
-        "runtimeClaim": {
-          "type": "string"
-        },
-        "autosaveClaim": {
-          "type": "string"
-        },
-        "resources": {
-          "type": "string"
-        },
-        "tolerations": {
-          "type": "string"
-        }
-      },
+      "$ref": "base.json",
       "additionalProperties": false,
       "required": [
         "autosaveClaim",
