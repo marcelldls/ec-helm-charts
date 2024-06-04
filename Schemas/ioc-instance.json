@@ -1,0 +1,101 @@
+{
+  "$defs":{
+    "base": {
+      "type": "object",
+      "properties": {
+        "beamline": {
+          "type": "string"
+        },
+        "ioc_group": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "hostNetwork": {
+          "type": "boolean"
+        },
+        "useAffinity": {
+          "type": "boolean"
+        },
+        "iocFolder": {
+          "type": "string"
+        },
+        "iocConfig": {
+          "type": "string"
+        },
+        "stop": {
+          "type": "string"
+        },
+        "liveness": {
+          "type": "string"
+        },
+        "globalEnv": {
+          "type": "string"
+        },
+        "securityContext": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "dataVolume": {
+          "type": "string"
+        },
+        "opisClaim": {
+          "type": "string"
+        },
+        "runtimeClaim": {
+          "type": "string"
+        },
+        "autosaveClaim": {
+          "type": "string"
+        },
+        "resources": {
+          "type": "string"
+        },
+        "tolerations": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "repo":{
+      "type": "object",
+      "properties": {
+        "ioc-instance": {
+          "$ref": "#/$defs/base",
+          "required": [
+            "autosaveClaim",
+            "beamline",
+            "dataVolume",
+            "globalEnv",
+            "hostNetwork",
+            "useAffinity",
+            "ioc_group",
+            "location",
+            "opisClaim",
+            "runtimeClaim",
+            "securityContext"
+          ]
+        }
+      }
+    },
+    "service":{
+      "type": "object",
+      "properties": {
+        "shared": {
+          "type": "object",
+          "properties": {
+            "ioc-instance": {
+              "$ref": "#/$defs/base",
+              "required": [
+                "image"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
